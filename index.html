@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>paste•it</title>
+	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'/>
+	<link rel="stylesheet" href="/paste.it.css"/>
+	<link rel="stylesheet" href="/vendor/CodeMirror/lib/codemirror.css"/>
+	<link rel="stylesheet" href="/paste.it-theme.css"/>
+</head>
+<body>
+	<nav>
+		<div id="logo"><a href="/" class="home">paste•it</a> <span>by <a href="">meister</a></span></div>
+		<div id="url"><span>paste it!</span></div>
+		<ul id="content_type" class="html">
+			<li class="html">html</li>
+			<li class="css">css</li>
+			<li class="js">js</li>
+		</ul>
+	</nav>
+
+	<section><textarea id="paster"></textarea></section>
+
+	<script data-main="/app/paste.it" src="/vendor/require.min.js"></script>
+
+	<!-- Template for start hint -->
+	<script type="text/template" id="t-start-hint">
+	<div id="startHint">press <span class="hotkey"><%- os == 'mac' ? '⌘' : 'ctrl' %> + v</span> to start</div>
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+/* Based on Sublime Text's Monokai theme */
+
+.cm-s-pasteit.CodeMirror {
+	background: #fff;
+	color: #333;
+	line-height: 1.2em;
+	font-family: "Source Code Pro",Menlo,Monaco,"Andale Mono","lucida console","Courier New", monospace;
+}
+.cm-s-pasteit div.CodeMirror-selected {background-color: #C2E8FF !important;border: 1px solid #AACBDF;border-radius: 4px;}
+.cm-s-pasteit .CodeMirror-gutters {background: #f4f4f4; border-right: 1px solid #DDD;}
+.cm-s-pasteit .CodeMirror-linenumber {color: #888; padding: 0 10px; font-size: 12px;}
+.cm-s-pasteit .CodeMirror-cursor {border-left: 1px solid #000 !important;}
+
+.cm-s-pasteit span.cm-comment {color: #ADADAD;}
+.cm-s-pasteit span.cm-atom {color: #ae81ff;}
+.cm-s-pasteit span.cm-number {color: #7653C1; background-color: rgba(118, 83, 193, 0.07);}
+
+.cm-s-pasteit span.cm-property {color: #719C37;}
+.cm-s-pasteit span.cm-attribute {color: #3A77BF;}
+.cm-s-pasteit span.cm-keyword {color: #626FC9;}
+.cm-s-pasteit span.cm-string {color: #BC670F; background-color: rgba(251, 233, 173, 0.14);}
+.cm-s-pasteit span.cm-string-2 {color: #E69A4C; background-color: rgba(230, 154, 76, 0.04);}
+.cm-s-pasteit span.cm-qualifier {color: #3A77BF;}
+
+
+.cm-s-pasteit span.cm-variable {color: #7653C1;}
+.cm-s-pasteit span.cm-variable-2 {color: #4C8FC7;}
+.cm-s-pasteit span.cm-def {color: #61862F;}
+.cm-s-pasteit span.cm-error {background: #FC1D52; color: #f8f8f0;}
+.cm-s-pasteit span.cm-bracket {color: #f8f8f2;}
+.cm-s-pasteit span.cm-tag {color: #2F6F9F;}
+.cm-s-pasteit span.cm-link {color: #ae81ff;}
+
+.cm-s-pasteit .CodeMirror-activeline-background {background: #f1fbff !important;}
+.cm-s-pasteit .CodeMirror-matchingbracket { text-decoration: underline; color: white !important;}
+
+.cm-s-pasteit .cm-tab:before {
+  content: "➤";   /*visualize tab character*/
+  color: #D4E5EB;
+}
