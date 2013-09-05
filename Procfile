@@ -1,1 +1,1 @@
-web: node index.js 80
+web: node index.js
