@@ -1,0 +1,15 @@
+[submodule "vendor/ZeroClipboard"]
+	path = vendor/ZeroClipboard
+	url = https://github.com/zeroclipboard/ZeroClipboard.git
+[submodule "vendor/CodeMirror"]
+	path = vendor/CodeMirror
+	url = https://github.com/marijnh/CodeMirror.git
+[submodule "vendor/underscore"]
+	path = vendor/underscore
+	url = https://github.com/jashkenas/underscore.git
+[submodule "vendor/backbone"]
+	path = vendor/backbone
+	url = https://github.com/jashkenas/backbone.git
+[submodule "vendor/js-beautify"]
+	path = vendor/js-beautify
+	url = https://github.com/einars/js-beautify.git
