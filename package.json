@@ -1,7 +1,16 @@
 {
   "name": "paste-it",
+  "description": "An easy to use ‘code paste’ web app that automatically formats your code and does syntax highlighting.",
   "version": "1.0.0",
+  "autor": {
+    "name": "Martin Kapp",
+    "email": "meister@me.com"
+  },
   "engines": {
     "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:meister/paste.it.git"
   }
 }
