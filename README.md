@@ -6,6 +6,7 @@
 
 + [Backbone.js](https://github.com/jashkenas/backbone)
 + [underscore.js](https://github.com/jashkenas/underscore)
++ [require.js](http://requirejs.org/)
 + [CodeMirror](https://github.com/marijnh/CodeMirror)
 + [JS Beautifier](https://github.com/einars/js-beautify)
 + [ZeroClipboard](https://github.com/zeroclipboard/ZeroClipboard)
