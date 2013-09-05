@@ -1,7 +1,7 @@
 {
   "name": "paste-it",
   "description": "An easy to use ‘code paste’ web app that automatically formats your code and does syntax highlighting.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Martin Kapp",
     "email": "meister@me.com"
