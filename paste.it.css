@@ -71,6 +71,23 @@ nav {
 .ready span.zeroclipboard-is-hover {
 	box-shadow: inset 0 1px 5px rgba(0,0,0,.2);
 }
+#copied_message {
+	position: absolute;
+	top: 40px;
+	left: 50%;
+	width: 120px;
+	z-index: 4;
+	margin-left: -65px;
+	text-align: center;
+	border: 1px solid #bbb;
+	background: rgba(200,200,200,.8);
+	color: #222;
+	text-shadow: 0 1px 0 rgba(255,255,255,.7);
+	padding: 5px;
+	font-family: 'HelveticaNeue-Light', 'Helvetica Neue-Light', Arial, sans-serif;
+	display: none;
+}
+
 #settings {
 	position: absolute;
 	right: 0;

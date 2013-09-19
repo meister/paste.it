@@ -98,11 +98,23 @@ define([
 				app.log('Flash movie loaded and ready.');
 
 				clip.on('dataRequested', _.bind(function (client, args) {
-					client.setText(this.$url.find('span').text());
+					if (this.$url.hasClass('ready')) {
+						client.setText(this.$url.find('span').text());
+					} else {
+						return false;
+					}
 				}, this));
 
 				client.on('complete', function (client, args) {
 					app.log('Copied text to clipboard: ' + args.text);
+					if (args.text) {
+						var $el = $('#copied_message')
+						$el.fadeIn(function() {
+							setTimeout(function() {
+								$el.fadeOut();
+							}, 1000);
+						});
+					}
 				});
 			}, this));
 
