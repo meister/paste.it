@@ -28,7 +28,7 @@ define([
 			this.editor = CodeMirror.fromTextArea(this.el, {
 				lineNumbers: true,
 				styleActiveLine: true,
-				mode: 'mixedhtml',
+				mode: 'javascript',
 				theme: 'pasteit'
 			});
 
@@ -41,6 +41,12 @@ define([
 				this.removeTip();
 				if (this.noSave) return;
 				this.savePaste();
+
+				if (this.editor.getValue().length) {
+					$('#settings .clear:hidden').fadeIn();
+				} else {
+					$('#settings .clear:visible').fadeOut();
+				}
 			}, this));
 
 			// Copy-paste monitor
@@ -71,6 +77,16 @@ define([
 			// Change content type clicker
 			$(document).on('click.pasteit', '#content_type li', _.bind(function(ev) {
 				this.setUi(ev.target.className);
+			}, this));
+
+			// Change content type clicker
+			$(document).on('click.pasteit', '#settings .clear', _.bind(function(ev) {
+				ev.preventDefault();
+				this.model = null;
+				this.setUrl();
+				this.setUi('js');
+				this.editor.setValue('');
+				this.editor.focus();
 			}, this));
 
 			// Copy to clipboard
@@ -117,7 +133,7 @@ define([
 				this.contentType = mode;
 				this.editor.setOption('mode', modes[this.contentType]);
 				$('#content_type').prop('class', this.contentType);
-				if (this.model.get('type') != this.contentType) {
+				if (this.model && this.model.get('type') != this.contentType) {
 					this.model.push({type: this.contentType});
 				}
 			}
@@ -140,12 +156,16 @@ define([
 					content: this.editor.getValue(),
 					type: this.contentType
 				}, _.bind(function(object) {
-					app.log('Created object', object.id, object);
+					app.log('Created object', object);
 					this.model = object;
 					this.setUrl();
 				}, this));
 
 			} else {
+				if (!this.model) {
+					this.model = new PasteModel();
+				}
+
 				if (this.model.get('content') == this.editor.getValue() &&
 					this.model.get('type') == this.contentType) {
 					return;
@@ -156,6 +176,7 @@ define([
 					type: this.contentType
 				}, _.bind(function(object) {
 					app.log('Updated object', object.id, object);
+					this.setUrl();
 				}, this));
 			}
 		},
@@ -222,9 +243,15 @@ define([
 		})(),
 
 		setUrl: function() {
-			app.router.navigate('/p/' + this.model.id, {trigger: false, replace: true});
-			this.$url.find('span').text(location.href);
-			this.$url.addClass('ready');
+			if (!this.model) {
+				app.router.navigate('/', {trigger: false, replace: true});
+				this.$url.find('span').text('Paste it!');
+				this.$url.removeClass('ready');
+			} else {
+				app.router.navigate('/p/' + this.model.id, {trigger: false, replace: true});
+				this.$url.find('span').text(location.href);
+				this.$url.addClass('ready');
+			}
 		}
 
 	});
