@@ -1,5 +1,7 @@
 # paste•it
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/meister/paste.it.svg)](https://greenkeeper.io/)
+
 **paste•it** is an easy to use ‘code paste’ web app that automatically formats your code and does syntax highlighting. It has almost no back-end requirements, except for pretty URL version which needs a URL Rewrite.
 
 ## Components used in the app:
